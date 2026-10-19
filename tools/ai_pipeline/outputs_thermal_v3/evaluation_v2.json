@@ -1,0 +1,35 @@
+{
+  "samples": 19982,
+  "metrics": {
+    "horizon_10min": {
+      "transformer": {
+        "mae_c": 0.3238,
+        "rmse_c": 0.4544
+      },
+      "persistence": {
+        "mae_c": 0.3704,
+        "rmse_c": 0.5679
+      },
+      "linear_trend": {
+        "mae_c": 0.4458,
+        "rmse_c": 0.6345
+      },
+      "improvement_vs_persistence_pct": 12.58
+    },
+    "horizon_30min": {
+      "transformer": {
+        "mae_c": 0.5866,
+        "rmse_c": 0.8623
+      },
+      "persistence": {
+        "mae_c": 0.8466,
+        "rmse_c": 1.2878
+      },
+      "linear_trend": {
+        "mae_c": 1.1139,
+        "rmse_c": 1.6348
+      },
+      "improvement_vs_persistence_pct": 30.71
+    }
+  }
+}

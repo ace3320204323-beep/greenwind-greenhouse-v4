@@ -1,0 +1,35 @@
+# Python 缓存与编译产物
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 训练数据集（可由 tools/ai_pipeline/generate_data_v2.py 重新生成，约 35MB）
+tools/ai_pipeline/data/dataset_thermal_v3.csv
+tools/ai_pipeline/data/*.csv
+
+# 运行时状态目录（每次运行自动生成，不属于源码）
+var/
+*.request
+
+# 训练过程临时产物
+tools/ai_pipeline/outputs_thermal_v3_smoke/
+tools/ai_pipeline/sac_runs/thermal_v4_smoke/
+tools/ai_pipeline/outputs_v2_1_residual/__pycache__/
+
+# 实验结果（可由对应 experiment.py 复现）
+tools/virtual_greenhouse/thermal_inertia_results/
+tools/virtual_greenhouse/energy_results/
+
+# 本地环境与编辑器
+.env
+.venv/
+venv/
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+
+# 系统文件
+.DS_Store

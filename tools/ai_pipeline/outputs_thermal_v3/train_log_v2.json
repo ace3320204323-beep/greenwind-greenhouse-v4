@@ -1,0 +1,181 @@
+{
+  "version": "0.2.1-sim-residual",
+  "arguments": {
+    "data": "tools\\ai_pipeline\\data\\dataset_thermal_v3.csv",
+    "out": "tools\\ai_pipeline\\outputs_thermal_v3",
+    "window": 60,
+    "horizons": [
+      10,
+      30
+    ],
+    "stride": 1,
+    "epochs": 25,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "patience": 5,
+    "seed": 2026,
+    "d_model": 32,
+    "nhead": 4,
+    "num_layers": 2,
+    "dropout": 0.1,
+    "max_samples": 0
+  },
+  "split": {
+    "train_groups": [
+      0,
+      2,
+      3,
+      4,
+      6,
+      7,
+      10,
+      11
+    ],
+    "val_groups": [
+      8,
+      9
+    ],
+    "test_groups": [
+      1,
+      5
+    ]
+  },
+  "full_window_counts": {
+    "train": 79928,
+    "validation": 19982,
+    "test": 19982
+  },
+  "used_window_counts": {
+    "train": 79928,
+    "validation": 19982,
+    "test": 19982
+  },
+  "best_epoch": 22,
+  "history": [
+    {
+      "epoch": 1,
+      "train_mse_normalized": 0.47618476831868845,
+      "val_mse_normalized": 0.46578215644734483
+    },
+    {
+      "epoch": 2,
+      "train_mse_normalized": 0.36608806818935463,
+      "val_mse_normalized": 0.45095684042493334
+    },
+    {
+      "epoch": 3,
+      "train_mse_normalized": 0.34666316830626287,
+      "val_mse_normalized": 0.43949476263566295
+    },
+    {
+      "epoch": 4,
+      "train_mse_normalized": 0.3340801928759504,
+      "val_mse_normalized": 0.49177290708163685
+    },
+    {
+      "epoch": 5,
+      "train_mse_normalized": 0.32302178828765915,
+      "val_mse_normalized": 0.43794687350773975
+    },
+    {
+      "epoch": 6,
+      "train_mse_normalized": 0.3137126588097159,
+      "val_mse_normalized": 0.4364487289034107
+    },
+    {
+      "epoch": 7,
+      "train_mse_normalized": 0.30545822165950426,
+      "val_mse_normalized": 0.4270497771572296
+    },
+    {
+      "epoch": 8,
+      "train_mse_normalized": 0.30086160785036753,
+      "val_mse_normalized": 0.43296102369742023
+    },
+    {
+      "epoch": 9,
+      "train_mse_normalized": 0.29333841506275804,
+      "val_mse_normalized": 0.440413619564909
+    },
+    {
+      "epoch": 10,
+      "train_mse_normalized": 0.2887863807686694,
+      "val_mse_normalized": 0.4320170708741169
+    },
+    {
+      "epoch": 11,
+      "train_mse_normalized": 0.2860082201402403,
+      "val_mse_normalized": 0.4360824412691523
+    },
+    {
+      "epoch": 12,
+      "train_mse_normalized": 0.28216617680529005,
+      "val_mse_normalized": 0.4241690157459921
+    },
+    {
+      "epoch": 13,
+      "train_mse_normalized": 0.27593366595470037,
+      "val_mse_normalized": 0.4402384752984305
+    },
+    {
+      "epoch": 14,
+      "train_mse_normalized": 0.27192468334337266,
+      "val_mse_normalized": 0.43421055291964
+    },
+    {
+      "epoch": 15,
+      "train_mse_normalized": 0.27005111245126556,
+      "val_mse_normalized": 0.4325207143845996
+    },
+    {
+      "epoch": 16,
+      "train_mse_normalized": 0.2697648804069174,
+      "val_mse_normalized": 0.40920854519227523
+    },
+    {
+      "epoch": 17,
+      "train_mse_normalized": 0.2660362284655519,
+      "val_mse_normalized": 0.44114172750974534
+    },
+    {
+      "epoch": 18,
+      "train_mse_normalized": 0.2608745401148538,
+      "val_mse_normalized": 0.4190119003679239
+    },
+    {
+      "epoch": 19,
+      "train_mse_normalized": 0.25654007197798534,
+      "val_mse_normalized": 0.4475817859333899
+    },
+    {
+      "epoch": 20,
+      "train_mse_normalized": 0.25541079794843924,
+      "val_mse_normalized": 0.40710767521035884
+    },
+    {
+      "epoch": 21,
+      "train_mse_normalized": 0.25339687390348214,
+      "val_mse_normalized": 0.4182298873091541
+    },
+    {
+      "epoch": 22,
+      "train_mse_normalized": 0.25167921605786453,
+      "val_mse_normalized": 0.4056049227273067
+    },
+    {
+      "epoch": 23,
+      "train_mse_normalized": 0.248250494754633,
+      "val_mse_normalized": 0.4200256363239008
+    },
+    {
+      "epoch": 24,
+      "train_mse_normalized": 0.24627234357880015,
+      "val_mse_normalized": 0.42122538204773474
+    },
+    {
+      "epoch": 25,
+      "train_mse_normalized": 0.24322666335948273,
+      "val_mse_normalized": 0.4203880447582993
+    }
+  ]
+}

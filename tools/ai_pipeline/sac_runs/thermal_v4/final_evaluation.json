@@ -1,0 +1,70 @@
+{
+  "evaluation_episodes": 5,
+  "deterministic_policy": true,
+  "episodes": [
+    {
+      "seed": 10042,
+      "reward": -1330.4586382236005,
+      "mean_temperature_error_c": 1.3196759259259259,
+      "temperature_in_band_rate": 0.5092592592592593,
+      "safety_override_rate": 0.0,
+      "planner_constraint_rate": 0.42592592592592593
+    },
+    {
+      "seed": 10043,
+      "reward": -1884.3349271582365,
+      "mean_temperature_error_c": 1.6850694444444445,
+      "temperature_in_band_rate": 0.4537037037037037,
+      "safety_override_rate": 0.0,
+      "planner_constraint_rate": 0.4513888888888889
+    },
+    {
+      "seed": 10044,
+      "reward": -1267.3909346091389,
+      "mean_temperature_error_c": 1.4722222222222223,
+      "temperature_in_band_rate": 0.39467592592592593,
+      "safety_override_rate": 0.0023148148148148147,
+      "planner_constraint_rate": 0.5358796296296297
+    },
+    {
+      "seed": 10045,
+      "reward": -1200.7840644753815,
+      "mean_temperature_error_c": 1.2319444444444445,
+      "temperature_in_band_rate": 0.5115740740740741,
+      "safety_override_rate": 0.0,
+      "planner_constraint_rate": 0.41087962962962965
+    },
+    {
+      "seed": 10046,
+      "reward": -1791.2574267950474,
+      "mean_temperature_error_c": 1.6305555555555555,
+      "temperature_in_band_rate": 0.4861111111111111,
+      "safety_override_rate": 0.0,
+      "planner_constraint_rate": 0.4375
+    }
+  ],
+  "aggregate": {
+    "reward": {
+      "mean": -1494.8451982522809,
+      "std": 284.532174531664
+    },
+    "mean_temperature_error_c": {
+      "mean": 1.4678935185185185,
+      "std": 0.17394451936231436
+    },
+    "temperature_in_band_rate": {
+      "mean": 0.4710648148148148,
+      "std": 0.043503740595679664
+    },
+    "safety_override_rate": {
+      "mean": 0.0004629629629629629,
+      "std": 0.0009259259259259259
+    },
+    "planner_constraint_rate": {
+      "mean": 0.45231481481481484,
+      "std": 0.04385581462012208
+    }
+  },
+  "metric_note": "mean_temperature_error_c 是棚温到昼夜目标区间的距离，不是 Transformer 预测误差。",
+  "evaluated_model": "best"
+}

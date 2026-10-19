@@ -1,0 +1,187 @@
+{
+  "model": "ClimateTransformer",
+  "version": "0.2.1-sim-residual",
+  "data_source": "virtual_greenhouse_simulation",
+  "window_minutes": 60,
+  "horizons_minutes": [
+    10,
+    30
+  ],
+  "features": [
+    "t_east_c",
+    "t_center_c",
+    "t_west_c",
+    "rh_center_pct",
+    "canopy_temp_c",
+    "substrate_temp_c",
+    "substrate_moisture_pct",
+    "co2_ppm",
+    "out_temp_c",
+    "out_rh_pct",
+    "out_solar_w_m2",
+    "out_wind_m_s",
+    "heater_cmd_pct",
+    "vent_cmd_pct",
+    "curtain_cmd_pct",
+    "fan_cmd_pct",
+    "heater_actual_pct",
+    "vent_actual_pct",
+    "curtain_actual_pct",
+    "fan_actual_pct",
+    "is_day",
+    "hour_sin",
+    "hour_cos",
+    "t_east_quality_score",
+    "t_center_quality_score",
+    "t_west_quality_score",
+    "rh_center_quality_score",
+    "out_temp_quality_score",
+    "out_rh_quality_score",
+    "out_solar_quality_score",
+    "out_wind_quality_score"
+  ],
+  "target": "t_center_c",
+  "target_representation": "future_temperature_minus_current_temperature",
+  "x_mean": [
+    13.69633293,
+    14.10362816,
+    13.84046173,
+    67.60827637,
+    17.60979271,
+    14.25039291,
+    16.68592453,
+    677.76031494,
+    8.8892231,
+    60.92721939,
+    210.76132202,
+    2.53415394,
+    35.47410583,
+    1.9374603,
+    56.7584343,
+    9.17534733,
+    35.4772377,
+    1.9374603,
+    56.73943329,
+    9.17534733,
+    0.43241566,
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    0.99017859,
+    1.0,
+    1.0,
+    0.72564483,
+    1.0
+  ],
+  "x_std": [
+    6.81631231,
+    6.9769311,
+    6.86038446,
+    20.93047333,
+    11.32607555,
+    4.19092798,
+    19.33872414,
+    101.9949646,
+    8.20308018,
+    11.29421902,
+    292.07540894,
+    0.59280211,
+    35.58790207,
+    8.47296524,
+    49.54113007,
+    19.35407829,
+    35.58511353,
+    8.47296524,
+    49.34201813,
+    19.35407829,
+    0.49541131,
+    0.70710677,
+    0.70710677,
+    1.0,
+    1.0,
+    1.0,
+    0.09861525,
+    1.0,
+    1.0,
+    0.44618875,
+    1.0
+  ],
+  "y_mean": [
+    -0.00312656,
+    -0.00827995
+  ],
+  "y_std": [
+    0.56338423,
+    1.29105175
+  ],
+  "architecture": {
+    "d_model": 32,
+    "nhead": 4,
+    "num_layers": 2,
+    "dropout": 0.1
+  },
+  "split": {
+    "method": "independent_group",
+    "train_groups": [
+      0,
+      2,
+      3,
+      4,
+      6,
+      7,
+      10,
+      11
+    ],
+    "val_groups": [
+      8,
+      9
+    ],
+    "test_groups": [
+      1,
+      5
+    ]
+  },
+  "best_epoch": 22,
+  "test_metrics": {
+    "samples": 19982,
+    "metrics": {
+      "horizon_10min": {
+        "transformer": {
+          "mae_c": 0.3238,
+          "rmse_c": 0.4544
+        },
+        "persistence": {
+          "mae_c": 0.3704,
+          "rmse_c": 0.5679
+        },
+        "linear_trend": {
+          "mae_c": 0.4458,
+          "rmse_c": 0.6345
+        },
+        "improvement_vs_persistence_pct": 12.58
+      },
+      "horizon_30min": {
+        "transformer": {
+          "mae_c": 0.5866,
+          "rmse_c": 0.8623
+        },
+        "persistence": {
+          "mae_c": 0.8466,
+          "rmse_c": 1.2878
+        },
+        "linear_trend": {
+          "mae_c": 1.1139,
+          "rmse_c": 1.6348
+        },
+        "improvement_vs_persistence_pct": 30.71
+      }
+    }
+  },
+  "forbidden_inputs": [
+    "truth_*",
+    "heater_efficiency_truth"
+  ],
+  "note": "当前权重仅由虚拟大棚数据训练，用于管线联调与仿真验证；接入真实棚室后需重新训练或微调并独立评估。"
+}

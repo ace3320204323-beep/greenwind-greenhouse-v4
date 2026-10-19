@@ -1,0 +1,28 @@
+{
+  "architecture": "thermal_inertia_transformer_sac_v3_constrained_control",
+  "algorithm": "SAC",
+  "total_timesteps": 80000,
+  "seed": 42,
+  "episode_hours": 72.0,
+  "control_interval_minutes": 5,
+  "warmup_minutes": 60,
+  "minimum_hold_steps": 2,
+  "use_transformer": true,
+  "scenario": "E:\\创赛\\绿风润耕\\产业赛道\\绿风润耕_V4.2.1_能源按钮修复版\\tools\\virtual_greenhouse\\scenarios\\shandong_winter_strawberry.json",
+  "transformer_model": "E:\\创赛\\绿风润耕\\产业赛道\\绿风润耕_V4.2.1_能源按钮修复版\\tools\\ai_pipeline\\outputs_thermal_v3\\transformer_v2.pt",
+  "transformer_meta": "E:\\创赛\\绿风润耕\\产业赛道\\绿风润耕_V4.2.1_能源按钮修复版\\tools\\ai_pipeline\\outputs_thermal_v3\\transformer_v2_meta.json",
+  "learning_starts": 1000,
+  "buffer_size": 100000,
+  "batch_size": 256,
+  "learning_rate": 0.0003,
+  "eval_freq": 10000,
+  "eval_episodes": 2,
+  "device": "cpu",
+  "action_semantics": [
+    "temperature_offset_c",
+    "comfort_weight",
+    "energy_weight",
+    "dehumidify_priority"
+  ],
+  "boundary": "本次训练在热惯性虚拟大棚中完成；结果用于仿真验证和系统联调，不等同于真实棚室效果。"
+}

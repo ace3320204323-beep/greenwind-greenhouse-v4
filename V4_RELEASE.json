@@ -1,0 +1,50 @@
+{
+  "product": "绿风润耕智慧大棚总控",
+  "version": "4.2.1-interactive-demo-energy-command-feedback",
+  "data_source": "virtual_greenhouse",
+  "active_ai": [
+    "Transformer 10/30分钟棚温预测",
+    "SAC V3上层策略",
+    "约束控制与安全裁决"
+  ],
+  "energy_coordination": [
+    "photovoltaic_and_wind_generation",
+    "grid_normal_limited_outage",
+    "battery_soc_charge_discharge",
+    "renewable_first_and_peak_shaving",
+    "power_shortage_feedback_to_effective_actuation"
+  ],
+  "frontend_pages": [
+    "大棚实况",
+    "控制中心",
+    "AI智能托管",
+    "能源协同",
+    "实验与报告",
+    "系统与投运"
+  ],
+  "manual_devices": [
+    "heater",
+    "vent",
+    "curtain",
+    "fan"
+  ],
+  "prediction_curves": [
+    "temperature_actual",
+    "temperature_10min",
+    "temperature_30min",
+    "target_low",
+    "target_high"
+  ],
+  "verification": {
+    "legacy_virtual_greenhouse_tests": 47,
+    "packaged_regression_tests": 19,
+    "thermal_inertia_regression_tests": 4,
+    "thermal_inertia_step_response": "passed",
+    "energy_system_regression_tests": 5,
+    "energy_storage_comparison": "passed",
+    "v4_contract_tests": 5,
+    "python_static_compile": "passed",
+    "windows_ui_smoke_test": "run 验证绿风润耕整合版.bat on target computer"
+  },
+  "boundary": "仿真闭环验证不等于真实大棚现场效果；热容、换热、电池、光伏和风机参数为工程初值。当前储能由可解释规则EMS调度，SAC V3不直接输出电池充放电功率；真实部署需完成电表、BMS、PCS和逆变器适配、现场标定与验收。"
+}

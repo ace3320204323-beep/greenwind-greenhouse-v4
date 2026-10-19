@@ -1,0 +1,21 @@
+{
+  "greenhouse_name": "山东冬季草莓大棚",
+  "crop": "草莓采果期",
+  "source": "virtual_greenhouse",
+  "default_mode": "assist",
+  "wall_interval_seconds": 1.0,
+  "assist_timeout_seconds": 60.0,
+  "episode_hours": 24.0,
+  "control_interval_minutes": 5,
+  "warmup_minutes": 60,
+  "minimum_hold_steps": 2,
+  "seed": 42,
+  "max_control_steps": 288,
+  "base_outdoor_temp_c": 5.0,
+  "weather_scenes": ["clear_cold"],
+  "scenario_path": "tools/virtual_greenhouse/scenarios/shandong_winter_strawberry.json",
+  "transformer_model_path": "tools/ai_pipeline/outputs_thermal_v3/transformer_v2.pt",
+  "transformer_meta_path": "tools/ai_pipeline/outputs_thermal_v3/transformer_v2_meta.json",
+  "sac_model_path": "tools/ai_pipeline/sac_runs/thermal_v4/sac_thermal_v4_best.zip",
+  "state_root": "var/greenhouse_ui"
+}

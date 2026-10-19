@@ -1,0 +1,117 @@
+{
+  "scenario_id": "shandong_winter_strawberry_72h",
+  "greenhouse_id": "GH001",
+  "crop_type": "STRAWBERRY",
+  "crop_stage": "FRUIT_EXPANSION",
+  "growth_stage": "fruiting",
+  "energy_enabled": true,
+  "targets": {
+    "day_temp_min_c": 20.0,
+    "day_temp_max_c": 25.0,
+    "night_temp_min_c": 8.0,
+    "night_temp_max_c": 10.0,
+    "humidity_min_pct": 50.0,
+    "humidity_max_pct": 70.0,
+    "day_radiation_threshold_w_m2": 50.0
+  },
+  "zones": {
+    "EAST": {"air_heat_capacity_kj_k": 723.6, "vent_exposure": 1.25, "thermal_inertia": 0.9},
+    "CENTER": {"air_heat_capacity_kj_k": 723.6, "vent_exposure": 0.8, "thermal_inertia": 1.2},
+    "WEST": {"air_heat_capacity_kj_k": 723.6, "vent_exposure": 1.05, "thermal_inertia": 1.0}
+  },
+  "plant": {
+    "cover_area_m2": 600.0,
+    "volume_m3": 1800.0,
+    "air_density_kg_m3": 1.2,
+    "air_heat_capacity_j_kg_k": 1005.0,
+    "canopy_heat_capacity_kj_k": 200.0,
+    "substrate_heat_capacity_kj_k": 1500.0,
+    "structure_heat_capacity_kj_k": 2500.0,
+    "canopy_air_exchange_kw_k": 0.15,
+    "substrate_air_exchange_kw_k": 0.06,
+    "structure_air_exchange_kw_k": 0.25,
+    "zone_neighbor_exchange_kw_k": 0.015,
+    "leaf_area_index": 2.5,
+    "transpiration_base_g_s": 0.02,
+    "substrate_evaporation_base": 0.004
+  },
+  "devices": [
+    {"device_id": "vent_01", "kind": "VENT", "unit": "%", "action_type": "SET_POSITION",
+     "max_rate_per_s": 1.0, "deadband": 0.5, "hysteresis": 1.0, "min_stop_seconds": 30.0,
+     "rated_power_kw": 0.3, "stuck_probability": 0.0},
+    {"device_id": "fan_01", "kind": "FAN", "unit": "%", "action_type": "SET_POWER",
+     "max_rate_per_s": 20.0, "deadband": 0.5, "hysteresis": 1.0,
+     "min_run_seconds": 20.0, "min_stop_seconds": 20.0,
+     "rated_power_kw": 1.5, "stuck_probability": 0.0},
+    {"device_id": "curtain_01", "kind": "CURTAIN", "unit": "%", "action_type": "SET_POSITION",
+     "max_rate_per_s": 0.8, "deadband": 0.5, "hysteresis": 1.0, "min_stop_seconds": 60.0,
+     "rated_power_kw": 0.5, "stuck_probability": 0.0},
+    {"device_id": "heater_01", "kind": "HEATER", "unit": "%", "action_type": "SET_POWER",
+     "max_rate_per_s": 10.0, "deadband": 0.5, "hysteresis": 1.0, "min_run_seconds": 30.0,
+     "rated_power_kw": 30.0, "stuck_probability": 0.0},
+    {"device_id": "irrigation_01", "kind": "IRRIGATION", "unit": "L/min", "action_type": "SET_FLOW",
+     "max_rate_per_s": 2.0, "deadband": 0.05, "hysteresis": 0.1,
+     "rated_power_kw": 1.0, "stuck_probability": 0.0}
+  ],
+  "weather": {
+    "base_outdoor_temp_c": 0.0,
+    "daily_temp_amplitude_c": 9.0,
+    "base_solar_irradiance_w_m2": 850.0,
+    "base_humidity_pct": 70.0,
+    "base_wind_speed_m_s": 2.0,
+    "weather_noise_alpha": 0.8,
+    "weather_noise_sigma_temp": 0.3,
+    "weather_noise_sigma_solar": 20.0
+  },
+  "sensor": {
+    "temperature_noise_sigma_c": 0.15,
+    "humidity_noise_sigma_pct": 0.8,
+    "radiation_noise_sigma": 15.0,
+    "wind_noise_sigma": 0.2,
+    "temperature_bias_c": 0.0,
+    "humidity_bias_pct": 0.0,
+    "temperature_quantization_c": 0.1,
+    "humidity_quantization_pct": 0.5,
+    "drift_rate_c_per_hour": 0.0,
+    "packet_loss_probability": 0.0
+  },
+  "simulation": {
+    "dt_seconds": 60.0,
+    "duration_hours": 72.0,
+    "realtime_factor": 0.0,
+    "sim_start": "2026-01-10T08:00:00+08:00"
+  },
+  "energy": {
+    "battery_capacity_kwh": 100.0,
+    "initial_soc_pct": 70.0,
+    "min_soc_pct": 15.0,
+    "max_soc_pct": 95.0,
+    "max_charge_power_kw": 30.0,
+    "max_discharge_power_kw": 30.0,
+    "charge_efficiency": 0.95,
+    "discharge_efficiency": 0.95,
+    "pv_peak_power_kw": 20.0,
+    "wind_rated_power_kw": 5.0,
+    "wind_cut_in_m_s": 2.0,
+    "wind_rated_speed_m_s": 10.0,
+    "wind_cut_out_m_s": 25.0,
+    "inverter_efficiency": 0.96,
+    "grid_max_import_kw": 50.0,
+    "grid_limited_import_kw": 10.0,
+    "peak_shaving_threshold_kw": 20.0,
+    "base_critical_load_kw": 0.6,
+    "allow_grid_charge": false
+  },
+  "weather_schedule": [
+    {"start_hour": 0, "end_hour": 24, "scene": "clear_cold"},
+    {"start_hour": 24, "end_hour": 36, "scene": "overcast_humid"},
+    {"start_hour": 36, "end_hour": 48, "scene": "cold_snap"},
+    {"start_hour": 48, "end_hour": 72, "scene": "clear_cold"}
+  ],
+  "fault_schedule": [
+    {"start_hour": 36, "event_type": "heater_degraded", "detail": {"device_id": "heater_01", "efficiency": 0.75}}
+  ],
+  "grid_schedule": [
+    {"start_hour": 0, "end_hour": 72, "status": "NORMAL"}
+  ]
+}
